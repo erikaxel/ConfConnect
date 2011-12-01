@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import no.illumina.adapter.CalendarAdapter;
+import no.illumina.adapter.CalendarAdapterFactory;
+import no.illumina.adapter.ICalendarAdapter;
 import no.illumina.dom.ConferenceEvent;
 
 import java.util.ArrayList;
@@ -55,7 +58,7 @@ public class MainActivity extends ListActivity {
     }
 
     private void fillData() {
-        CalendarAdapter calendarAdapter = new CalendarAdapter(this);
+        ICalendarAdapter calendarAdapter = CalendarAdapterFactory.getCalendarAdapter(this);
         eventList.clear();
         eventList.addAll(calendarAdapter.parseCalendar());
         adapter.notifyDataSetChanged();

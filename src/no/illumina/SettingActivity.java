@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import no.illumina.adapter.CalendarAdapter;
+import no.illumina.adapter.CalendarAdapterFactory;
+import no.illumina.adapter.ICalendarAdapter;
 import no.illumina.dom.Calendar;
 
 import java.util.ArrayList;
@@ -28,7 +31,7 @@ public class SettingActivity extends Activity {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.checkbox_container);
 
         // TODO: This can also be sent by the Main Activity
-        CalendarAdapter adt = new CalendarAdapter(this);
+        ICalendarAdapter adt = CalendarAdapterFactory.getCalendarAdapter(this);
         List<Calendar> calendarList = adt.getCalendarList();
         if (calendarList.size() > 0) {
             TextView labelNoCalendars = (TextView) findViewById(R.id.label_no_calendars);
