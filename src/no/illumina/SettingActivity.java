@@ -22,7 +22,7 @@ public class SettingActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings);
+        setContentView(R.layout.options);
         setTitle("Select calendar(s)");
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.checkbox_container);
